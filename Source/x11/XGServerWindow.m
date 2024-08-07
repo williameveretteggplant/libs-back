@@ -3022,6 +3022,7 @@ swapColors(unsigned char *image_data, NSBitmapImageRep *rep)
       case NSWindowAbove:
         if (other != 0)
 	  {
+        NSLog(@"Putting window %ld on top of %ld", window->number, other->number);
 	    XWindowChanges chg;
 	    chg.sibling = other->ident;
 	    chg.stack_mode = Above;
