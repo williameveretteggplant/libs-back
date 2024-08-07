@@ -3003,7 +3003,6 @@ swapColors(unsigned char *image_data, NSBitmapImageRep *rep)
       case NSWindowBelow:
         if (other != 0)
 	  {
-        NSLog(@"Putting window %ld on top of %ld", window->number, other->number);
 	    XWindowChanges chg;
 	    chg.sibling = other->ident;
 	    chg.stack_mode = Below;
@@ -3012,7 +3011,6 @@ swapColors(unsigned char *image_data, NSBitmapImageRep *rep)
 	  }
 	else
 	  {
-        NSLog(@"Putting window %ld on top", window->number);
 	    XWindowChanges chg;
 	    chg.stack_mode = Below;
 	    XReconfigureWMWindow(dpy, window->ident, window->screen_id,
